@@ -15,7 +15,7 @@ const controller = {
     	if (!note) {
       	let newNote = new Note({
           	name: name,
-          	discription: ''
+          	discription: 'hello dis'
       	});
         console.log(newNote);
       	newNote.save(function(err, note) {

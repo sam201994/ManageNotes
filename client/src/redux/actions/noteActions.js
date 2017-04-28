@@ -1,6 +1,15 @@
 import store from '../../redux/store';
 import axios from 'axios';
 
+export function updateCurrentNote(currentNote) {
+
+  store.dispatch({
+      type: 'UPDATE_CURRENTNOTE',
+      payload: { currentNote : currentNote }
+    });
+
+}
+
 export function addNote (e) {
   
   e.preventDefault();
