@@ -35,6 +35,19 @@ const controller = {
       }
     });
 
-  } 
+  },
+
+  getNotes: function(req, res) {
+     Note.find({}, function(err, users){
+
+      let allNotes = {}
+
+      users.forEach(function(note) {
+          allNotes[note.name] = {name: note.name, discription: note.discription, id: note._id}
+      });
+      return res.json({notes: allNotes});  
+
+    })
+  }
 };
 module.exports = controller;

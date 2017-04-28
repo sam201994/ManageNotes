@@ -17,7 +17,6 @@ app.listen(port, function() {
 const noteCtrl = require('./db/note/noteController.js');
 //routes
 app.post('/createNote', noteCtrl.create)
+app.get('/getNotes', noteCtrl.getNotes)
 
-
-// app.post('/users/create', userCtrl.create);
 

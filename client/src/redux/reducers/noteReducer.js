@@ -1,5 +1,6 @@
 const defaults = {
-  error:'' 
+  error:'', 
+  notes:{}
 };
 
 export default function authReducer(state = defaults, action) {
@@ -7,6 +8,11 @@ export default function authReducer(state = defaults, action) {
     case 'UPDATE_ERROR': {
     	const newState = Object.create(state);
     	newState.error = action.payload.err;
+      return newState;
+    }
+     case 'UPDATE_NOTELIST': {
+    	const newState = Object.create(state);
+    	newState.notes 	= action.payload.notes;
       return newState;
     }
   }
