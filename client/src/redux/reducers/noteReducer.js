@@ -3,7 +3,8 @@ const defaults = {
   notes:{},
   currentNote: '',
   currentDiscription: '',
-  currentTag: ''
+  currentTag: '',
+  searchValue: ''
 };
 
 export default function authReducer(state = defaults, action) {
@@ -33,6 +34,11 @@ export default function authReducer(state = defaults, action) {
     case 'UPDATE_CURRENTTAG' : {
       const newState = Object.create(state);
       newState.currentTag = action.payload.tag
+      return newState;
+    }
+    case 'UPDATE_SEARCHVALUE' : {
+      const newState = Object.create(state);
+      newState.searchValue = action.payload.searchValue
       return newState;
     }
   }

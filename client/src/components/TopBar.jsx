@@ -4,12 +4,17 @@ import store from '../redux/store';
 import { connect } from 'react-redux';
 
 /* other files */
-import { addNote } from '../redux/actions/noteActions.js';
+import { addNote, searchNote } from '../redux/actions/noteActions.js';
 
 const TopBar = ({ note }) => (
 
     <div>
       <div>MyNotes</div>
+        
+        <div>
+          <input type="text" name="searchNote" placeholder="search" onChange={searchNote}/> 
+        </div>
+
       <form name="CreateNote" onSubmit={addNote}>
         <div>
           <input type="text" name="myNote" placeholder="myNote" required />
@@ -17,6 +22,7 @@ const TopBar = ({ note }) => (
         <button type="submit" className="btn">Add</button>
         <div className="error-text">{note.error}</div>
       </form>
+
     </div>
 
 );
