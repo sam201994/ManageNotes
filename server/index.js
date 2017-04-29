@@ -18,5 +18,5 @@ const noteCtrl = require('./db/note/noteController.js');
 //routes
 app.post('/createNote', noteCtrl.create)
 app.get('/getNotes', noteCtrl.getNotes)
-
+app.put('/updateNote', noteCtrl.updateNote)
 

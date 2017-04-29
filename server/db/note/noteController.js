@@ -48,6 +48,32 @@ const controller = {
       return res.json({notes: allNotes});  
 
     })
+  },
+  updateNote: function(req, res){
+    console.log("INSIDE CONTORLLER FOR UPDATE: ", req.body);
+    Note.findById(req.body.id, function (err, note) {  
+    // Handle any possible database errors
+    if (err) {
+      console.log("EROR: ", err);
+        res.status(500).send(err);
+    } else {
+        // Update each attribute with any possible attribute that may have been submitted in the body of the request
+        // If that attribute isn't in the request body, default back to whatever it was before.
+
+        note.discription = req.body.discription 
+        // Save the updated document back to the database
+        note.save(function (err, note) {
+          console.log("INSIDE SAVE");
+            if (err) {
+              console.log("INSIDE SAVE ERROR", err);
+                res.status(500).send(err)
+            }
+            return res.json({ success: true});
+        });
+    }
+  });
   }
 };
 module.exports = controller;
+
+

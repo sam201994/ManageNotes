@@ -1,6 +1,54 @@
 import store from '../../redux/store';
 import axios from 'axios';
 
+export function updateDiscription(e) {
+    
+      //e.preventDefault();
+      //console.log("here: ",name);
+      // const discription = e.target.disp.value;
+      const name = e.target.value;
+      console.log("-----------------",e.target.value);
+
+        // axios.post('/updateNote', {
+        //     discription: discription,
+        //     name: 
+        // })
+        // .then((res) => {
+        //   if (res.data.success) {
+        //       getNotes();    
+        //   } else {
+        //       setError(res.data.error);
+        //   }
+        // })
+        // .catch("ERROR");
+    store.dispatch({
+      type: 'UPDATE_DISCRIPTION',
+      payload: {  name }
+    });
+
+}
+export function saveUpdated(disp, id,name) {
+
+      console.log("-----------------",disp, "----",id);
+
+
+        axios.put('/updateNote', {
+            discription: disp,
+            id: id
+        })
+        .then((res) => {
+          if (res.data.success) {
+              getNotes();    
+              updateCurrentNote(name)
+          } else {
+              setError(res.data.error);
+          }
+        })
+        .catch("ERROR");
+
+}
+
+
 export function updateCurrentNote(currentNote) {
 
   store.dispatch({
