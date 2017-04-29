@@ -21,13 +21,11 @@ export default function authReducer(state = defaults, action) {
       const newState = Object.create(state);
       let a = action.payload.currentNote;
       newState.currentNote = a;
-      console.log("CURRENT DISCRIPT NEW: ", a);
       newState.currentDiscription = newState.notes[a].discription;
       return newState;
     }
     case 'UPDATE_DISCRIPTION' : {
       const newState = Object.create(state);
-      console.log("in reducer::::", action.payload.name)
       newState.currentDiscription = action.payload.name
       return newState;
     }

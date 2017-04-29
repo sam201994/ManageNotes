@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 
 mongoURI = 'mongodb://localhost/Notes';
-
 mongoose.connect(mongoURI);
 
 // Run in seperate terminal window using 'mongod'

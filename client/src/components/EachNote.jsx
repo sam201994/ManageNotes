@@ -1,19 +1,21 @@
+/* modules */
 import React, {Component} from 'react';
 import {Link} from 'react-router';
-/* Redux */
 import store from '../redux/store';
 import { connect } from 'react-redux';
-import { updateCurrentNote } from '../redux/actions/noteActions.js'
+
+/* other files */
+import { updateCurrentNote, deleteNote } from '../redux/actions/noteActions.js'
 
 const EachNote = ({ name, discription, note }) => {
-
   return (
     <div>
 	   {name}
-	     <Link to={"note/" + name}>
- 		     <button onClick={updateCurrentNote.bind(null,name)}>edit</button>
-         </Link>
-	   <button>del</button>
+	    <Link to={"note/" + name}>
+ 		     <button 
+          onClick={updateCurrentNote.bind(null,name)}>edit</button>
+      </Link>
+	    <button onClick={deleteNote.bind(null, note.notes[name].id)}>del</button>
     </div>
   )
 }
@@ -23,8 +25,3 @@ export default connect((store) => {
     note : store.note
   };
 })(EachNote);
-
-// {JSON.stringify(friends.friendsList)}
- // <Link to="friends">
- //          <button>friends</button>
- //        </Link>
