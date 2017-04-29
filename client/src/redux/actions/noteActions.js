@@ -5,13 +5,12 @@ import axios from 'axios';
 export function searchNote(e) {
 
   const searchValue = e.target.value;
-  console.log("searchValue: ", searchValue);
   store.dispatch({
     type: 'UPDATE_SEARCHVALUE',
     payload: {  searchValue }
   });
-
 }
+
 export function updateCurrentTag(e) {
 
   const tag = e.target.value;

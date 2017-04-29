@@ -10,15 +10,15 @@ class ListOfNotes extends React.Component {
 
   constructor(props) {
     super(props);
-    //getNotes();
   }
   search(key) {
+    
     const { note } = this.props;
     if(note.searchValue === '')
       return true;
 
-    if(note.notes[key].discription.indexOf(note.searchValue) !== -1
-       || note.notes[key].tags.join(",").indexOf(note.searchValue) !== -1)
+    if( note.notes[key].discription.indexOf(note.searchValue) !== -1
+     || note.notes[key].tags.join(",").indexOf(note.searchValue) !== -1)
       return true;
     return false;
   }
@@ -29,12 +29,12 @@ class ListOfNotes extends React.Component {
          <div>
           {Object.keys(note.notes).map((key, index) => {
             if(this.search(key)){
-                return (
-                  <EachNote 
-                  key={index} 
-                  name={key} 
-                  discription={note.notes[key].discription}/>
-                );   
+              return (
+                <EachNote 
+                key={index} 
+                name={key} 
+                discription={note.notes[key].discription}/>
+              );   
             }   
           })}
         </div>

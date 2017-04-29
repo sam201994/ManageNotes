@@ -11,16 +11,20 @@ const EditNote = ({ note }) => {
   return (
     <div>
       <h3>{note.currentNote}</h3>
-      <textarea 
-        type="text" 
-        name="disp" 
-        defaultValue={note.currentDiscription} 
-        onChange={updateDiscription}/>
-      <button 
-        className="btn" 
-        onClick={saveUpdated.bind(null,note.currentDiscription, note.notes[note.currentNote].id,note.currentNote)}>
-        Save
-      </button>
+      
+      <div>
+        <textarea 
+          type="text" 
+          name="disp" 
+          defaultValue={note.currentDiscription} 
+          onChange={updateDiscription}/>
+        <button 
+          className="btn" 
+          onClick={saveUpdated.bind(null,note.currentDiscription, note.notes[note.currentNote].id,note.currentNote)}>
+          Save
+        </button>
+      </div>
+
       <div>
         <input onChange={updateCurrentTag} type="text" name="tag" placeholder="tag" required/>
          <button 
@@ -30,6 +34,7 @@ const EditNote = ({ note }) => {
         </button>
         <div>{(note.currentNote) ? JSON.stringify(note.notes[note.currentNote].tags) : ""}</div>
       </div>
+
     </div>
   )
 }
@@ -40,5 +45,4 @@ export default connect((store) => {
   };
 })(EditNote);
 
-//  <div>{(note.currentNote) ? JSON.stringify(note.notes[note.currentNote].tags) : ""}</div>
   

@@ -12,8 +12,7 @@ const EachNote = ({ name, discription, note }) => {
     <div>
 	   {name}
 	    <Link to={"note/" + name}>
- 		     <button 
-          onClick={updateCurrentNote.bind(null,name)}>edit</button>
+ 		     <button onClick={updateCurrentNote.bind(null,name)}>edit</button>
       </Link>
 	    <button onClick={deleteNote.bind(null, note.notes[name].id)}>del</button>
     </div>
