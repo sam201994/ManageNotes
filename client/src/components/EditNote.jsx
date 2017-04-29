@@ -4,7 +4,7 @@ import store from '../redux/store';
 import { connect } from 'react-redux';
 
 /* other files */
-import { updateDiscription, saveUpdated } from '../redux/actions/noteActions.js'
+import { updateDiscription, saveUpdated, updateCurrentTag, addTags } from '../redux/actions/noteActions.js'
 
 const EditNote = ({ note }) => {
 
@@ -21,7 +21,15 @@ const EditNote = ({ note }) => {
         onClick={saveUpdated.bind(null,note.currentDiscription, note.notes[note.currentNote].id,note.currentNote)}>
         Save
       </button>
-      <div className="error-text">{note.error}</div>
+      <div>
+        <input onChange={updateCurrentTag} type="text" name="tag" placeholder="tag" required/>
+         <button 
+          className="btn" 
+          onClick={addTags.bind(null,note.currentTag,  note.notes[note.currentNote].id)}>
+          Add Tags
+        </button>
+        <div>{(note.currentNote) ? JSON.stringify(note.notes[note.currentNote].tags) : ""}</div>
+      </div>
     </div>
   )
 }
@@ -32,5 +40,5 @@ export default connect((store) => {
   };
 })(EditNote);
 
-
+//  <div>{(note.currentNote) ? JSON.stringify(note.notes[note.currentNote].tags) : ""}</div>
   

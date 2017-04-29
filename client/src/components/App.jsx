@@ -15,6 +15,9 @@ export default class App extends React.Component {
     super(props);
     getNotes();
   }
+  ComponentWillMount() {
+     getNotes(); 
+  }
   render() {
     return (
       <div>

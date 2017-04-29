@@ -18,4 +18,5 @@ app.listen(port, function() {
 app.post('/createNote', noteCtrl.create)
 app.get('/getNotes', noteCtrl.getNotes)
 app.put('/updateNote', noteCtrl.updateNote)
-app.delete('./deleteNote', noteCtrl.deleteNote)
+app.delete('/deleteNote', noteCtrl.deleteNote)
+app.put('/updateTag', noteCtrl.updateTag)

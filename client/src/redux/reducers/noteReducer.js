@@ -2,7 +2,8 @@ const defaults = {
   error:'', 
   notes:{},
   currentNote: '',
-  currentDiscription: ''
+  currentDiscription: '',
+  currentTag: ''
 };
 
 export default function authReducer(state = defaults, action) {
@@ -27,6 +28,11 @@ export default function authReducer(state = defaults, action) {
     case 'UPDATE_DISCRIPTION' : {
       const newState = Object.create(state);
       newState.currentDiscription = action.payload.name
+      return newState;
+    }
+    case 'UPDATE_CURRENTTAG' : {
+      const newState = Object.create(state);
+      newState.currentTag = action.payload.tag
       return newState;
     }
   }

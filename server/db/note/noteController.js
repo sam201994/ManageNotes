@@ -43,7 +43,9 @@ const controller = {
           allNotes[note.name] = {
            name: note.name, 
            discription: note.discription, 
-           id: note._id}
+           id: note._id,
+           tags: note.tags
+         }
       });
       return res.json({notes: allNotes});  
     })
@@ -66,15 +68,33 @@ const controller = {
     });
   },
 
+  updateTag: function(req, res) {
+
+    Note.findById(req.body.id, function (err, note) {  
+      if (err) {
+        res.status(500).send(err);
+      }else {
+        note.tags.push(req.body.tag)  
+        note.save(function (err, note) {
+            if (err) {
+              res.status(500).send(err)
+            }
+          return res.json({ success: true});
+        });
+      }
+    });
+  },
+
   deleteNote: function (req, res) {
 
-    Note.findByIdAndRemove(req.body.id, function (err, note) {  
+
+    Note.findByIdAndRemove(req.query.id, function (err, note) {  
       if(err) {
         return res.json({error: err})
       }else {
+        console.log("successfull deleted")
         const response = {
           message: "note successfully deleted",
-          id: note._id,
           success: true
         };
         return res.json(response);

@@ -1,14 +1,46 @@
 import store from '../../redux/store';
 import axios from 'axios';
 
-export function deleteNote(id) {
+export function updateCurrentTag(e) {
 
-  axios.delete('/deleteNote', {
+  const tag = e.target.value;
+    console.log("TAG INSIDE ACTION: ", tag)
+  store.dispatch({
+    type: 'UPDATE_CURRENTTAG',
+    payload: {  tag }
+  });
+}
+
+export function addTags(tag, id) {
+  console.log("ADD TAG");
+  console.log(tag, id);
+  axios.put('/updateTag', {
+    tag: tag,
     id: id
+  })
+  .then((res) => {
+    if (res.data.success) {
+      console.log("inside success after adding tag")
+        getNotes();    
+    } else {
+      console.log("inside error after tagging");
+        setError(res.data.error);
+    }
+  })
+  .catch("ERROR");
+}
+
+export function deleteNote(id) {
+  console.log("id client side: ", id)
+  axios.delete('/deleteNote', {
+     params: {
+     id: id
+  }
   })
   .then((res) => {
     console.log(res.data);
     if (res.data.success) {
+      console.log("INSIED DELETE SUCCESS")
         getNotes();    
     } else {
         setError(res.data.error);
