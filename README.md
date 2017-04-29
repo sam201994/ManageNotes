@@ -22,7 +22,10 @@ Add, Delete, Edit Notes.
 
 ## Usage
 
-- (To be updated later)
+- you can add note
+- edit a note
+- save the notes
+- delete a note
 
 
 ## Requirements
@@ -49,6 +52,6 @@ From within the root directory:
   ~ npm start
   ~ mongo
 
-  * Open app in the browser by running (https://localhost:8000)
+  * Open app in the browser by running (https://localhost:8001)
 ```
 
