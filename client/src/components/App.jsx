@@ -8,6 +8,7 @@ import TopBar from './TopBar.jsx'
 
 /* other files */
 import { getNotes } from '../redux/actions/noteActions.js';
+import Styles from './Styles.css'; 
 
 export default class App extends React.Component {
 
@@ -20,9 +21,11 @@ export default class App extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className={Styles.outer}>
+      <div className={Styles.inner}>
         <TopBar />
         <ListOfNotes />
+      </div>
       </div>
     );
   }

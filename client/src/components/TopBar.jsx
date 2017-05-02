@@ -5,24 +5,21 @@ import { connect } from 'react-redux';
 
 /* other files */
 import { addNote, searchNote } from '../redux/actions/noteActions.js';
+import Styles from './Styles.css';
 
 const TopBar = ({ note }) => (
 
     <div>
-      <div>MyNotes</div>
+      <div className={Styles.NavBar}>
+        <div className={Styles.NavBar_left}>
+          <h1>MyNotes</h1>
+        </div>
         
-        <div>
+        <div className={Styles.NavBar_right}>
           <input type="text" name="searchNote" placeholder="search" onChange={searchNote}/> 
         </div>
-
-      <form name="CreateNote" onSubmit={addNote}>
-        <div>
-          <input type="text" name="myNote" placeholder="myNote" required />
-        </div>
-        <button type="submit" className="btn">Add</button>
-        <div className="error-text">{note.error}</div>
-      </form>
-
+      </div>
+      <div className={Styles.line}/>
     </div>
 
 );

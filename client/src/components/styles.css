@@ -1,0 +1,207 @@
+.outer {
+
+	margin : 0px auto;
+	width: 500px;
+	margin-top: 50px;
+
+}
+
+.inner {
+
+	margin:0px auto;
+
+}
+
+.line {
+
+	width: 500px;
+	width: 100%;
+	height: 0.1px;
+	background-color: black;
+	padding-top: 1px;
+	margin:0px auto; 
+
+}
+
+.NavBar_left {
+
+	display:inline-block;
+	margin-left: 75px;
+}
+
+.NavBar_right{
+
+	display:inline-block;
+	margin-left: 30px;
+
+}
+
+.NavBar {
+
+	height: 80px;
+	vertical-align: middle;
+	margin: auto;
+		
+}
+
+.NavBar_left h1{
+	
+  	margin:auto;
+    font-size: 40px;
+    margin-top: 10px;
+    font-family: fantasy;
+}
+
+.NavBar_left h3{
+	
+  	margin:auto;
+    font-size: 40px;
+    margin-top: 10px;
+    font-family: fantasy;
+}
+
+input[type=text] {
+    background-color: white;
+    color: black;
+    height: 25px;
+    width: 150px;
+    color: black;
+    margin-top: 10px;
+    font-size: 15px;
+
+}
+
+.form_left {
+
+	display:inline-block;
+	margin-left: 35px;
+
+}
+
+.form_right{
+
+	display:inline-block;
+	margin-left: 0px;
+
+}
+
+.form {
+	
+	height: 80px;
+	vertical-align: middle;
+	width: 300px;
+	margin: auto;
+		
+}
+
+.note {
+
+	width: 390px;
+	display: flex;
+    flex-wrap: wrap;
+
+}
+.note_left {
+
+	flex: 60%;
+	font-family: fantasy;
+
+}
+
+.note_right{
+
+    flex: -10%; 
+}
+
+.mainList {
+
+	width: 400px;
+	margin: 20px auto auto auto;
+
+}
+
+.button {
+
+	background-color: white;
+    border: 0.1px solid grey;
+    color: green;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 5.5px 10px;
+}
+
+.textArea {
+
+	height: 80px;
+	vertical-align: middle;
+	width: 500px;
+	margin: auto;
+
+}
+.textArea_box1 {
+
+	margin-left:46px;
+	margin-top: 10px;
+	width: 500px;
+}
+
+.textArea_box2 {
+
+	margin-left:210px;
+	margin-top: 10px;
+	flex: 50%; 
+	
+}
+
+.tag {
+
+	height: 80px;
+	vertical-align: middle;
+	width: 300px;
+	margin: auto;
+	margin-top: 310px;
+}
+
+.tag_left {
+
+	display:inline-block;
+	margin-left: 30px;
+
+}
+
+.tag_right {
+
+	display:inline-block;
+	margin-left: 0px;
+}
+.tag_footer {
+         
+    width: 400;
+    max-width: 500;
+    margin:0px auto;
+
+}
+
+.btn {
+
+  font-family: Arial;
+  color: #121012;
+  font-size: 12px;
+  padding: 10px 10px 10px 10px;
+  text-decoration: none;
+
+}
+
+.btn_outer {
+	padding: 2px 2px 2px 2px;
+	display: inline-block;
+	margin-left: 5px;
+}
+
+
+
+

@@ -1,4 +1,4 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 mongoURI = 'mongodb://localhost/Notes';
 mongoose.connect(mongoURI);
